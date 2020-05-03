@@ -2,46 +2,46 @@
 function formRefresh(){
     document.getElementById("form_data").reset();
 }
-
 // Event function on button
 function akanNames(){
-    var birthDate=document.getElementById("birthdate").value;
-    var dateEntered= birthDate.split("-");
-    var day=parseInt(dateEntered[2]);
-    var month=parseInt(dateEntered[1]);
-    var year=parseInt(dateEntered[0]);
-
+    var gender;
+    var day;
+    day=parseInt(document.getElementById("day").value);
+    var month;
+    month=parseInt(document.getElementById("month").value);
+    var year;
+    year=document.getElementById("year").value;
     //Centuary calculation
-    var centry=(year-1)/100+1; 
-    var dayOfTheWeek = ( centry/4 -2*centry-1 + 5*year/4  + 26*(month+1)/10 + day ) % 7;
-        
-    document.getElementById("display").innerHTML=Math.round(dayOfTheWeek);
-    var femaleNames=["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
-    var maleNames=["Kwasi"," Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
-    var gender=document.getElementById("gender").value;
-    var daysOfWeek=["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    var dOfWeek = Math.round(dayOfTheWeek)
-    
-
+    var centry;
+    centry=parseInt(year.slice(0, 2));
+    var yearDigits;
+    yearDigits=parseInt(year.slice(2, 4));
+    var dayOfTheWeek;
+    dayOfTheWeek = ( ( (centry/4) - 2*centry-1) + ((5*yearDigits/4) ) + ((26*(month+1)/10)) + day ) % 7;
+    var femaleNames;
+    femaleNames=["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
+    var maleNames;
+    maleNames=["Kwasi"," Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
+    gender=document.getElementById("gender").value;
+    var daysOfWeek;
+    daysOfWeek=["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var dOfWeek;
+    dOfWeek = Math.trunc(dayOfTheWeek);
+    var dayName;
     //form valid and output
-    if(!isNaN(dOfWeek)){
-        if(gender=="Male"){
-            document.getElementById("display").innerHTML= "Your akan names is"+ maleNames[Math.round(dayOfTheWeek)]+" and you were born on "+ daysOftheWeek[dOfWeek];
+   if(!isNaN(dOfWeek)){
+        if(gender==="male"){
+            dayName = maleNames[dOfWeek];
         }
-        else if(gender==="Female"){
-            document.getElementById("display").innerHTML="You were born on "+daysOfWeek[dOfWeek]+ " and Your akan name is " + femaleNames[Math.round(dayOfTheWeek)];
-        }else{
+        else if (gender==="female") {
+            dayName = femaleNames[dOfWeek];
+        } else {
             alert("valid valid dates and choose your gender");
-            document.getElementById("display").innerHTML="";
+            document.getElementById("myAkan").innerHTML="";
         }
-    }
-            else{
-                alert("Enter valvalidid birthday and choose your gender");
-                document.getElementById("display").innerHTML="";
+   }else{
+        alert("Enter valvalidid birthday and choose your gender");
+        document.getElementById("myAkan").innerHTML="";
             }
-    
-    
-    
-
- 
+            document.getElementById("myAkan").innerHTML= "Your Akan name is: " + dayName;
         }
