@@ -10,7 +10,7 @@ To run the application in the terminal;
 *cd it into the directory
 *open index.html
 ##Known Bugs
--Fork the repo
+-Fork the repository
 -Create new branch('git checkout -b')
 -write 'git commit -m "message"
 -write "git push origin <branch name">
