@@ -21,6 +21,7 @@ function akanNames(){
     var gender=document.getElementById("gender").value;
     var daysOfWeek=["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     var dOfWeek = Math.round(dayOfTheWeek)
+    
 
     //form valid and output
     if(!isNaN(dOfWeek)){
