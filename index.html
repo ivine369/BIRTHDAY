@@ -1,32 +1,70 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr"
-    <head>
-        <meta charset="UTF-8" />
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="css/styles.css" rel="stylesheet" type="text/css">
-        <title>Birthday Name and Dates</title>
-    </head>
-    <body>
-        <script>
-            function fafafa() {
-                var variable = document.getElementById('input_id').value;
-                document.getElementById('alert').innerHTML = 'The user input is:' + variable;
-            }
-        </script>
-    </head>
-    <body>
-        <form>
-            <input type="date" id="input_id" value=" class="form-control"><br>
-            <select class="form-control" name="" id="Gender">
-                <select class="form-control" name="" id="Gender">
 
-                </select>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <centre><p id="name"></p></centre>
-            </select><br>
-            <input type="button" value="submit" onclick="fafafa()"/>
-            <div id="alert" style="color: blueviolet"></div>;
-        </form>
+ 
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Birthday Akan</title>
+        <link rel="stylesheet" href="css/custom-styles.css">
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+    </head>
+    
+    <body>
+        <div class="main">
+            <div id="welcome-message">
+                <h1 id="mheading">Let's find out your Akan Name</h1>
+    
+            </div>
+            <div id="welcome-story">
+                <h1>AkanNames..</h1>
+                <h3 id="story">
+                    The Akan people of Ghana name their children after the day of the week
+                    they were born and the order in which they were born. The "day names" therefore have a meaning 
+                    of the particular name. Middle names can refer to their
+                    birth order, twin status, or an ancestor's name.
+                </h3>
+               
+            </div>
+            <div class="date-form">
+    
+                <form name="myForm" onsubmit="return aggregateFunctions()">
+    
+                    <label for="day">Day:</label><br>
+                    <input type="text" id="day" name="day" required><br>
+
+                    <label for="month">Month:</label><br>
+                    <input type="text" id="month" name="month" required><br>
+
+                    <label for="year">Year:</label><br>
+                    <input type="text" id="year" name="year" required><br>
+
+                    <div id="the-gender" class="label">Select Gender</div>
+
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+
+                     <input type="radio" id="female" name="gender" value="female" required>
+                     <label for="female">Female</label><br><br>
+
+                    <input type="submit" value="SUBMIT">
+                    <input type="submit" value="FIND ANOTHER" onClick="clearInput()">
+                    <button type="button" class="btn btn-primary" onclick="findNames"
+                </form>
+            </div>
+            <div class="imges">
+    
+            </div>
+            <div class="output">
+                <div id="myAkan">
+                    <h1>Wait to find out your Akan name</h1>
+                </div>
+                <div id="reason"></div>
+            </div>
+    
+        </div>
+    
+        <script src="js/scripts.js"></script>
     </body>
-</html>
+    
+    </html
